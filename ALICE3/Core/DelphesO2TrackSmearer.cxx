@@ -181,9 +181,9 @@ bool TrackSmearer::smearTrack(O2Track& o2track, int pid, float nch)
 // uncertainty on pt
 double TrackSmearer::getPtRes(int pdg, float nch, float eta, float pt)
 {
-  auto lutEntry = getLUTEntry(pdg, nch, 0., eta, pt);              // take variance 1/pt
-  auto ptRes = sqrt(lutEntry->covm[14]) * pow(lutEntry->pt, 2);    // propagate to pt uncertainty
-  //ptRes /= lutEntry->pt;                                         // relative uncertainty
+  auto lutEntry = getLUTEntry(pdg, nch, 0., eta, pt);           // take variance 1/pt
+  auto ptRes = sqrt(lutEntry->covm[14]) * pow(lutEntry->pt, 2); // propagate to pt uncertainty
+  // ptRes /= lutEntry->pt;                                         // relative uncertainty
   return ptRes;
 }
 /*****************************************************************/
@@ -191,9 +191,9 @@ double TrackSmearer::getPtRes(int pdg, float nch, float eta, float pt)
 double TrackSmearer::getEtaRes(int pdg, float nch, float eta, float pt)
 {
   auto lutEntry = getLUTEntry(pdg, nch, 0., eta, pt);
-  auto sigmatgl = sqrt(lutEntry->covm[9]);               // take variance tg(l)
-  auto etaRes = fabs(sin(2.0*atan(exp(-eta))))*sigmatgl; // propagate to eta uncertainty
-  //etaRes /= fabs(lutEntry->eta);                       // relative uncertainty
+  auto sigmatgl = sqrt(lutEntry->covm[9]);                   // take variance tg(l)
+  auto etaRes = fabs(sin(2.0 * atan(exp(-eta)))) * sigmatgl; // propagate to eta uncertainty
+  // etaRes /= fabs(lutEntry->eta);                       // relative uncertainty
   return etaRes;
 }
 /*****************************************************************/

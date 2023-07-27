@@ -119,8 +119,8 @@ struct OnTheFlyRichPid {
   float mTileLength = bRichPhotodetectorOtherModuleLength;              // 18.4; // [cm]
   float mTileLengthCentral = bRichPhotodetectorCentralModuleHalfLength; // 18.4 / 2.0; // [cm]
   float mProjectiveLengthInner = mTileLengthCentral;
-  float mRadiusProjIn = bRichRadiatorInnerRadius;                       // 85.;   // [cm]
-  float mRadiusProjOut = bRichPhotodetectorOuterRadius;                 // 112.; // [cm]
+  float mRadiusProjIn = bRichRadiatorInnerRadius;       // 85.;   // [cm]
+  float mRadiusProjOut = bRichPhotodetectorOuterRadius; // 112.; // [cm]
   std::vector<TVector3> det_centers;
   std::vector<TVector3> rad_centers;
   std::vector<float> angle_centers;
